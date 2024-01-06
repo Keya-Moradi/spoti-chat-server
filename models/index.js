@@ -9,7 +9,6 @@ const Post = require('./posts');
 const Chat = require('./chats');
 const Message = require('./messages');
 
-// console.log('mongo uri =>', process.env.MONGO_URI);
 
 // connect to the database
 mongoose.connect(process.env.MONGO_URI, {
@@ -35,6 +34,7 @@ db.on('error', (err) => {
 	console.log(`Database error: `, err);
 });
 
+
 // export models
 module.exports = {
 	User,
@@ -44,3 +44,4 @@ module.exports = {
 	Chat,
 	Message,
 };
+

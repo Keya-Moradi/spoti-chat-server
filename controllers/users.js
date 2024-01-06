@@ -1,7 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
+
 const { User, Favorite, Friend, Chat } = require('../models');
+
+
 
 // Get ALL Users
 router.get('/', async (req, res) => {
