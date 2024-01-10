@@ -1,88 +1,185 @@
-# mongoose-app
-Create Express API using Mongoose and more ...
+# `Spoti-chat`
+Share your love of music!
 
-## Lab
-#### `1` Create a conditional that returns all users based off of `state`
+![Spoti-Chat](./images/HomePage.png)
 
-#### `2` Create a `Vehicle` model with the following:
-   - [ ] make
-   - [ ] model
-   - [ ] type
-   - [ ] vin
-   - [ ] color
-   - [ ] fuel
+## What is it?
+Travel Map uses the Google Maps API to plot bookmark pins so that you can easily see your saved destinations.
 
-#### `3` Make a `createRandomVehicles` function and test function
-   - [ ] commit message
-```
-commit -m feat: add Vehicle model and createRandomVehicles function
-```
+Spoti-Chat uses Spotify API, and allows you to do the following:
+- Listen to music
+- Search for songs
+- Search for Recommended songs
+- Add Search and Recommended songs to Favorites
+- Chat with your friends
 
-#### `4` Create a `/vehicles` route
+## Installation Instructions
 
-#### `5` Create a `/vehicles/:field/:value` route
-   - [ ] Make conditionals with each field
-   - [ ] Add commit message
-```
-commit -m feat: add /vehicles and /vehicles/:field/:value route
-```
+1. Fork and clone this repository.
+2. Run `npm install` from your terminal while inside of the project's directory.
+3A. Set up a `.env` file and add
+`REDIRECT_URI=http://localhost:3000`
+`SPOTIFY_CLIENT_ID=92b0246161e84e68b0e078e1161ccef2`
+`SPOTIFY_SECRET=6926ebac9da74de09a8dab612d8a97ab`
+`MONGO_URI=mongodb+srv://keya:4qh4YubhmcgMEssW@cluster0.j9iccj7.mongodb.net/`
+3B. It's important to note that your Spotify API key comes from the Spotify Developer website `https://developer.spotify.com/`
+4. You don't have to create the database in the app because you're connecting through our URL.
+5. Run `npm run dev` on your front end with `http://localhost:8000/` in terminal
 
-#### `6` Create a `Company` model with the following:
-   - [ ] name
-   - [ ] address ( location )
-   - [ ] city
-   - [ ] state
-   - [ ] zipCode
-         
-#### `7` Make a `createRandomCompany` function
-   - [ ] commit message
-```
-commit -m feat: add Company model and createRandomCompany function
-```
-#### `8` Create a `/companies` route
+## Navigating The Project
 
-#### `9` Create a `/companies/:field/:value` route
-   - [ ] Make conditionals with each field
-   - [ ] Add commit message
-```
-commit -m feat: add /companies and /companies/:field/:value route
-```
+### chats Routes
 
-#### `10` Create a `Airline` model with the following:
-   - [ ] aircraftType
-   - [ ] airline
-   - [ ] airplane
-   - [ ] airport
-   - [ ] flightNumber
-   - [ ] recordLocator
-   - [ ] seat
+| Method | Path         | Location  | Purpose              |
+| ------ | ------------ | --------- | -------------------- |
+| GET    | /chats       | app.js    | Home page            |
+| GET    | /chat/:id    | chats.js   | Login form           |
+| GET    | /auth/signup | auth.js   | Signup form          |
+| POST   | /auth/login  | auth.js   | Login user           |
+| POST   | /auth/signup | auth.js   | Creates User         |
+| GET    | /auth/logout | auth.js   | Removes session info |
+| GET    | /profile     | app.js    | Regular User Profile |
 
-#### `11` Make a `createRandomAirlines` function and test
+### favorites Routes
 
-#### `12` Create a `/airlines` route
+| Method | Path        | Location | Purpose               |
+| ------ | ----------- | -------- | --------------------- |
+| GET    | /map        | map.js   | Home page             |
+| GET    | /map/search | map.js   | Search Results screen |
+| POST   | /map/new    | map.js   | Create bookmark       |
+| PUT    | /map/edit   | map.js   | Edit bookmark         |
+| DELETE | /map/delete | map.js   | Deletes bookmark      |
 
-#### `13` Create a `/airlines/:field/:value` route
-  - [ ] Make conditionals with each field
-  - [ ] Add commit message
+### friends Routes
 
-```
-commit -m feat: add Airlines model and createRandomAirlines function
-```
+| Method | Path        | Location | Purpose               |
+| ------ | ----------- | -------- | --------------------- |
+| GET    | /map        | map.js   | Home page             |
+| GET    | /map/search | map.js   | Search Results screen |
+| POST   | /map/new    | map.js   | Create bookmark       |
+| PUT    | /map/edit   | map.js   | Edit bookmark         |
+| DELETE | /map/delete | map.js   | Deletes bookmark      |
 
-Create a `Commerce` model with the following:
-   - [ ] department
-   - [ ] price
-   - [ ] product
-   - [ ] productAdjective
-   - [ ] productDescription
-   - [ ] productMaterial
-   - [ ] productName
+### index Routes
 
-Make a `createRandomCommerce` function
-commit message
-Create a `/commerce` route
-Create a `/commerce/:field/:value` route
-conditionals with each field
-```
-commit -m feat: add Commerce model and routes
-```
+| Method | Path        | Location | Purpose               |
+| ------ | ----------- | -------- | --------------------- |
+| GET    | /map        | map.js   | Home page             |
+| GET    | /map/search | map.js   | Search Results screen |
+| POST   | /map/new    | map.js   | Create bookmark       |
+| PUT    | /map/edit   | map.js   | Edit bookmark         |
+| DELETE | /map/delete | map.js   | Deletes bookmark      |
+
+
+### messages Routes
+
+| Method | Path        | Location | Purpose               |
+| ------ | ----------- | -------- | --------------------- |
+| GET    | /map        | map.js   | Home page             |
+| GET    | /map/search | map.js   | Search Results screen |
+| POST   | /map/new    | map.js   | Create bookmark       |
+| PUT    | /map/edit   | map.js   | Edit bookmark         |
+| DELETE | /map/delete | map.js   | Deletes bookmark      |
+
+### posts Routes
+
+| Method | Path        | Location | Purpose               |
+| ------ | ----------- | -------- | --------------------- |
+| GET    | /map        | map.js   | Home page             |
+| GET    | /map/search | map.js   | Search Results screen |
+| POST   | /map/new    | map.js   | Create bookmark       |
+| PUT    | /map/edit   | map.js   | Edit bookmark         |
+| DELETE | /map/delete | map.js   | Deletes bookmark      |
+
+### users Routes
+
+| Method | Path        | Location | Purpose               |
+| ------ | ----------- | -------- | --------------------- |
+| GET    | /map        | map.js   | Home page             |
+| GET    | /map/search | map.js   | Search Results screen |
+| POST   | /map/new    | map.js   | Create bookmark       |
+| PUT    | /map/edit   | map.js   | Edit bookmark         |
+| DELETE | /map/delete | map.js   | Deletes bookmark      |
+
+#### chats Model
+
+- **Description:** This model is used to store user created bookmarks.
+- **Attributes:**
+  - **id:** Automatically generated by the ORM.
+  - **userId:** id corresponding to an id in the user's table. This tracks which user created the bookmark.
+  - **lat:** Latitude obtained from location search.
+  - **lng:** Longtitude obtained from location search.
+  - **name:** User inputted nickname for bookmark (optional).
+  - **address:** User inputted address.
+  - **createdAt:** Automatically generated by the ORM.
+  - **updatedAt:** Automatically generated by the ORM.
+
+#### favorites Model
+
+- **Description:** This model is used to store user created favorite bookmarks 
+- **Attributes:**
+  - **name:** 
+  - **type:** 
+  - **spotifyID:** 
+  - **albumName:** 
+  - **artistName:** 
+  - **imgUrl:** 
+  - **isFavorited:** 
+  - **timestamps:** 
+
+  #### friends Model
+
+- **Description:** This model is used to store user friends
+- **Attributes:**
+  - **friendsSchema:** Contains the schema pulled using mongoose from the Mongo database
+  - **users:** Contains the Friends schema 
+
+  #### index Model
+
+- **Description:** This model is used to store the homepage content
+- **Attributes:**
+  - **User:** Stores user data for the path ./users
+  - **Post:** Stores user data for the path ./favorites
+  - **Favorite:** Stores user data for the path ./friends
+  - **Friend:** Stores user data for the path ./posts
+  - **Chat:** Stores user data for the path ./chats
+  - **Message:** Stores user data for the path ./messages
+
+  #### messages Model
+
+- **Description:** This model is used to store messages between users
+- **Attributes:**
+  - **sender:** stroes the id of the sender
+  - **content:** stores the content inside the chat
+  - **chstroomID:** Assigns an id to the chat
+  - **timestamps:** Assigns timestamps
+
+  #### posts Model
+
+- **Description:** This model is used to store posts created by users
+- **Attributes:**
+  - **userId:** Stores user ID
+  - **name:** Stores user name
+  - **albumName:** Stores album name
+  - **artistName:** Stores artist name
+  - **postType:** stores the type of post by user
+  - **spotifyId:** stores the Spotify ID
+  - **content:** Stores content
+  - **imgUrl:** Stores img URL
+   - **timestamps:** Stores time stamps
+
+  #### users Model
+
+- **Description:** This model is used to store user information
+- **Attributes:**
+  - **firstName:** First name of the user
+  - **lastName:** Last name of the user
+  - **username:** User name
+  - **email:** email
+  - **password:** password
+  - **bio:** bio of the user
+  - **dateOfBirth:** date of birth of the user
+  - **userImage:** image of the user
+  - **favorites:** favorites data stored in Mongo
+  - **friends:** friends of the user
+  - **timestamps:** time stamps for the users
